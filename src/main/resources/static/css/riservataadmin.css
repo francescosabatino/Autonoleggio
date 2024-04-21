@@ -1,0 +1,218 @@
+div.footerdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: row; /* Imposta la direzione dei flex container su riga */
+}
+
+div.footerdiv > div {
+  margin: 0 10px; /* Aggiunge uno spazio tra i loghi */
+}
+footer {
+  background-color: #AEB9A9;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerdiv {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: auto;
+  margin-top: 3vw;
+}
+
+.footerdiv > div {
+  flex: 1;
+}
+.footer-info {
+  margin-top: 3vw;
+  margin-left: 10vw;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  text-align: left;
+}
+
+.info-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-copyright {
+  display: flex;
+  font-size: 12px;
+  margin-top: auto;
+}
+div.orari{
+margin-top:2vw;
+}
+div.footerdiv div {
+  margin-left:2vw;
+}
+nav nav div div img {
+  max-height: 50px;
+}
+.remove-padding{
+  padding: 0%;
+}
+.pippo {
+  background-color: #AEB9A9;
+}
+.sezbenv{
+  background-color: white;
+  position: absolute;
+  left: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  right: auto;
+}
+
+div.noleggi {
+  background-color: #3E4A45;
+  display: flex;
+  justify-content: center;
+}
+
+.header{
+  background-color: #1B2025;
+  display: flex;
+  justify-content: center;
+  color: #AEB9A9;
+  padding: 1.5rem;
+  font-weight: 900;
+}
+div.tabelle{
+  margin-top: 80px;
+ }
+
+
+ /* Stile per la tabella */
+.card table {
+  width: 100%; /* Occupa tutta la larghezza del contenitore */
+  table-layout: fixed; /* Imposta la larghezza delle colonne in base alla larghezza della tabella */
+  border-collapse: collapse; /* Unisce i bordi delle celle */
+  margin: 20px;
+}
+
+/* Stile per la cella della tabella */
+.card table td {
+  border: 1px solid #ddd; /* Bordo sottile grigio */
+  padding: 8px; /* Spazio interno delle celle */
+  overflow: hidden; /* Nasconde eventuali contenuti che superano le dimensioni della cella */
+  text-overflow: ellipsis; /* Se il testo è troppo lungo, mostra i puntini di sospensione */
+  white-space: nowrap; /* Evita il wrapping del testo */
+}
+
+/* Stile per il contenitore della tabella */
+.card {
+  max-height: 810px;
+  width: 45%;
+  overflow-y: auto; 
+  background-color: #333d3a9c;
+  color: #ffffffd1;
+}
+
+.forms{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+footer {
+  height: fit-content;
+  display: flex;
+  border: 2px solid black; /* Specificato lo stile e il colore del bordo */
+  color: white;
+ position: relative;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ }
+form {
+  /*width: 330px;
+  padding: 26px;
+  margin-bottom: 16rem;
+  margin-top: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #27302fc4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;*/
+}
+div div form{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+button, input, optgroup, select, textarea {
+  margin: 10px;
+  font-size: inherit;
+  line-height: inherit;
+  color: wheat;
+}
+footer img{
+max-height: 50px;
+}
+form input {
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.tabella1{
+  height: 50rem;
+ }
+ .tabella2{
+  height: 50rem;
+ }
+ .tabella3{
+  height: 50rem;
+ }
+
+.tabella1 ::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+.tabella1  ::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+
+.tabella1  ::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+.tabella1  ::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}*/

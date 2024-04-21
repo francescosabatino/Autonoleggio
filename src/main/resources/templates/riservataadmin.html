@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Riservata Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/riservataadmin.css">
+    <style>
+        body {
+            background-image: url('imgs/sfondoprogetto.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+
+<body>
+<header>
+    <div class="header">
+        <h1>
+            CAR RENTAL SERVICE
+        </h1>
+    </div>
+</header>
+<nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary remove-padding ">
+        <div class="container-fluid pippo">
+            <div class="navbar-brand"><img th:src="@{imgs/sfondonoleggio.jpeg}" alt="..."></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Operazioni Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/riservataadmin/logout}"> Logout </a></li>
+                            <li><a class="dropdown-item" th:href="@{/riservataadmin}">Area Riservata Admin</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Scegli la tua marca di auto preferita
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Ford')}">Ford</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Toyota')}">Toyota</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Infiniti')}">Infiniti</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Subaru')}">Subaru</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Lotus')}">Lotus</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Alfa Romeo')}">Alfa
+                                Romeo</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Maserati')}">Maserati</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Aston Martin')}">Aston
+                                Martin</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='McLaren')}">McLaren</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                   th:href="@{/dettagliomarca(marca='Lamborghini')}">Lamborghini</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Porsche')}">Porsche</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Ferrari')}">Ferrari</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Jaguar')}">Jaguar</a>
+                            </li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Tesla')}">Tesla</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Volvo')}">Volvo</a></li>
+                            <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Jeep')}">Jeep</a></li>
+                            <li><a class="dropdown-item"
+                                   th:href="@{/dettagliomarca(marca='Volkswagen')}">Volkswagen</a></li>
+                    </li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Chevrolet')}">Chevrolet</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Nissan')}">Nissan</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Kia')}">Kia</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='BMW')}">BMW</a></li>
+                    <li><a class="dropdown-item"
+                           th:href="@{/dettagliomarca(marca='Mercedes-Benz')}">Mercedes-Benz</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Renault')}">Renault</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Audi')}">Audi</a></li>
+                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Fiat')}">Fiat</a></li>
+                </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Quanto Vuoi Viaggiare
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/noleggiolungo}"> Noleggio Lungo termine </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettagliocorto}"> Noleggio Breve termine </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Come ti alimenti?
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='D')}"> Diesel
+                        </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='B')}">
+                            Benzina </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='E')}">
+                            Elettrica </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='H')}"> Hybrid
+                        </a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Scegli il tuo comfort
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='2' )}">
+                            Citycar</a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='4')}"> Utilitaria
+                        </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='5')}"> Berlina
+                        </a></li>
+                        <li><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='7')}"> Auto
+                            familiare </a></li>
+                    </ul>
+                </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>
+
+
+<div>
+    <div class="row align-item-start forms">
+        <div class="card col-md-4 tabella1">
+            <table>
+                <tr>
+                    <td> Marca</td>
+                    <td> Modello</td>
+                    <td> Numero Posti</td>
+                </tr>
+                <tr th:each="auto : ${automobili}">
+                    <td th:text="${auto.marca}"></td>
+                    <td th:text="${auto.modello}"></td>
+                    <td th:text="${auto.numeroPosti}"></td>
+                    <td><a th:href="@{/riservataadmin/elimina(id=${auto.id})}"> Rimuovi auto </a></td>
+                    <td><a th:href="@{/riservataadmin(id=${auto.id})}"> Modifica auto </a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="card col-md-4 tabella2">
+            <table>
+                <tr>
+                    <td> Nome</td>
+                    <td> Cognome</td>
+                    <td> Numero di Telefono</td>
+                    <td> Username</td>
+                </tr>
+                <tr th:each=" u : ${utenti}">
+                    <td th:text="${u.nome}"></td>
+                    <td th:text="${u.cognome}"></td>
+                    <td th:text="${u.numeroTelefono}"></td>
+                    <td th:text="${u.profilo.username}"></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <div class="row align-item-start forms">
+        <div class="card col-md-4 tabella3">
+            <table>
+                <tr>
+                    <td> Data Inizio Noleggio</td>
+                    <td> Data Fine Noleggio</td>
+                    <td> Username</td>
+                    <td> Marca</td>
+                    <td> Modello</td>
+                </tr>
+                <tr th:each=" n : ${noleggi}">
+                    <td th:text="${#temporals.format(n.dataInizioNoleggio,'dd-MM-yyyy HH:mm')}"></td>
+                    <td th:text="${#temporals.format(n.dataFineNoleggio,'dd-MM-yyyy HH:mm')}"></td>
+                    <td th:text="${n.profilo.utente.nome}"></td>
+                    <td th:text="${n.profilo.utente.cognome}"></td>
+                    <td th:text="${n.auto.marca}"></td>
+                    <td th:text="${n.auto.modello}"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="card col-md-4">
+         <form method="post" action="/riservataadmin" enctype="multipart/form-data">
+            <input type="text" name="targa" th:value="${targa}" th:style="'color:black'" placeholder="Inserisci la targa" required>
+            <br>
+            <input type="text" name="marca" th:value="${marca}" th:style="'color:black'" placeholder="Inserisci la marca" required>
+            <br>
+            <input type="text" name="modello" th:value="${modello}" th:style="'color:black'" placeholder="Inserisci il modello" required>
+            <br>
+            <input type="number" name="numeroPosti" th:value="${numeroPosti}" th:style="'color:black'" placeholder="Scrivi il numero posti" required>
+            <br>
+            <input type="text" name="tipoCambio" th:value="${tipoCambio} " th:style="'color:black'" placeholder="Inserisci il tipo di cambio"
+                   required>
+            <br>
+            <input type="number" name="tariffaGiornaliera" th:value="${tariffaGiornaliera}" th:style="'color:black'"
+                   placeholder="Inserisci la tariffa giornaliera" required>
+            <br>
+            <input type="text" name="alimentazione" th:value="${alimentazione}" th:style="'color:black'"
+                   placeholder="Inserisci il tipo di alimentazione" required>
+            <br>
+            <input type="number" name="numeroPorte" th:value="${numeroPorte}"  th:style="'color:black'" placeholder="Inserisci il numero di porte"
+                   required>
+            <br>
+            <input type="text" name="coperturaDanni" th:value="${coperturaDanni}" th:style="'color:black'"
+                   placeholder="Inserisci se ha la copertura danni" required>
+            <br>
+            <input type="text" name="coperturaFurti" th:value="${coperturaFurti}" th:style="'color:black'"
+                   placeholder="Inserisci se ha la copertura furto" required>
+            <br>
+            <input type="text" name="noleggioLungoTermine" th:value="${noleggioLungoTermine}" th:style="'color:black'"
+                   placeholder="Inserisci se può essere noleggiata a lungo termine" required>
+            <br>
+            <input type="text" name="descrizione" th:value="${descrizione}" th:style="'color:black'"
+                   placeholder="Inserisci la descrizione dell'auto">
+            <br>
+            <input type="file" name="foto">
+            <br>
+            <input type="submit" value="Crea nuova auto" th:style="'color:black'">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--<form method="post" action="/riservataadmin" enctype="multipart/form-data">
+    <input type="text" name="targa" th:value="${targa}" th:style="'color:black'" placeholder="Inserisci la targa" required>
+    <br>
+    <input type="text" name="marca" th:value="${marca}" th:style="'color:black'" placeholder="Inserisci la marca" required>
+    <br>
+    <input type="text" name="modello" th:value="${modello}" th:style="'color:black'" placeholder="Inserisci il modello" required>
+    <br>
+    <input type="number" name="numeroPosti" th:value="${numeroPosti}" th:style="'color:black'" placeholder="Scrivi il numero posti" required>
+    <br>
+    <input type="text" name="tipoCambio" th:value="${tipoCambio} " th:style="'color:black'" placeholder="Inserisci il tipo di cambio"
+           required>
+    <br>
+    <input type="number" name="tariffaGiornaliera" th:value="${tariffaGiornaliera}" th:style="'color:black'"
+           placeholder="Inserisci la tariffa giornaliera" required>
+    <br>
+    <input type="text" name="alimentazione" th:value="${alimentazione}" th:style="'color:black'"
+           placeholder="Inserisci il tipo di alimentazione" required>
+    <br>
+    <input type="number" name="numeroPorte" th:value="${numeroPorte}"  th:style="'color:black'" placeholder="Inserisci il numero di porte"
+           required>
+    <br>
+    <input type="text" name="coperturaDanni" th:value="${coperturaDanni}" th:style="'color:black'"
+           placeholder="Inserisci se ha la copertura danni" required>
+    <br>
+    <input type="text" name="coperturaFurti" th:value="${coperturaFurti}" th:style="'color:black'"
+           placeholder="Inserisci se ha la copertura furto" required>
+    <br>
+    <input type="text" name="noleggioLungoTermine" th:value="${noleggioLungoTermine}" th:style="'color:black'"
+           placeholder="Inserisci se può essere noleggiata a lungo termine" required>
+    <br>
+    <input type="text" name="descrizione" th:value="${descrizione}" th:style="'color:black'"
+           placeholder="Inserisci la descrizione dell'auto">
+    <br>
+    <input type="file" name="foto">
+    <br>
+    <input type="submit" value="Crea nuova auto" th:style="'color:black'">
+</form>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<footer>
+    <div class="footerdiv">
+        <div>
+            <img th:src="@{imgs/logofb.png}">
+            <p> CarRental </p>
+        </div>
+        <div>
+            <img th:src="@{imgs/logoig.png}">
+            <p> Car__Rental </p>
+        </div>
+        <div>
+            <img th:src="@{imgs/logox.png}">
+            <p> carrental </p>
+        </div>
+    </div>
+    <div class="footer-info">
+        <p class="info-title">Informazioni</p>
+        <ul class="info-list">
+            <li>Condizioni generali</li>
+            <li>Informativa Privacy</li>
+            <li>Domande frequenti</li>
+            <li>Privacy Policy</li>
+            <li>Cookie Policy</li>
+            <li>Aggiorna le preferenze sui cookie</li>
+        </ul>
+    </div>
+    <div class="orari">
+        <p>Via Duomo 4, 20124 MI</p>
+        <p>Lunedi-Venerdì: 8:00-20:00</p>
+        <p>Sabato-Domenica: 8:00-13:00</p>
+    </div>
+    <div class="footer-copyright">
+        <p>Copyright © 2019 Car Rental – Powered by Envision</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

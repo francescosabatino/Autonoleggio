@@ -1,0 +1,99 @@
+/*body {
+  background-color: #004224;
+}
+*/
+article{
+  margin-bottom: 120px;
+}
+nav nav div div img {
+  max-height: 50px;
+}
+article div  {
+padding: 1rem;
+margin-bottom: 1rem;
+margin-left: 1rem;
+margin-right: 1rem;
+}
+.card{
+background-color: #64726A;
+}
+.card-title, .card-text {
+color: white;
+}
+footer {
+  height: fit-content;
+  display: flex;
+  border: 2px solid black; 
+  color: white;
+ position: relative;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ }
+.remove-padding{
+padding: 0%;
+}
+.pippo {
+background-color: #AEB9A9;
+}
+.btn, .btn-primary{
+border: 0;
+background-color: #3E4A45;
+}
+.header{
+background-color: #1B2025;
+display: flex;
+justify-content: center;
+color: #AEB9A9;
+padding: 1.5rem;
+font-weight: 900;
+}
+footer img{
+max-height: 50px;
+}
+footer {
+  background-color: #AEB9A9;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerdiv {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: auto;
+  margin-top: 3vw;
+}
+
+.footerdiv > div {
+  flex: 1;
+}
+.footer-info {
+  margin-top: 3vw;
+  margin-left: 10vw;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  text-align: left;
+}
+
+.info-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-copyright {
+  display: flex;
+  font-size: 12px;
+  margin-top: auto;
+}
+div.orari{
+margin-top:2vw;
+}
+div.footerdiv div {
+  margin-left:2vw;
+}

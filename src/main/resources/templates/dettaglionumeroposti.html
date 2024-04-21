@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Lista Auto Numero Posti </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style> body {background-image: url('imgs/sfondoprogetto.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }</style>
+
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>
+                CAR RENTAL SERVICE
+            </h1>
+        </div>
+        </header>
+        
+        <nav>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary remove-padding ">
+                <div class="container-fluid pippo">
+                    <div class="navbar-brand"> <img th:src="@{imgs/sfondonoleggio.jpeg}" alt="..."> </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                            </li>
+                            <li th:if="${utente == null && admin == null}" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Accedi/Registrati
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" th:href="@{/loginutente}">Login</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/registrazioneutente}">Registrati</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" th:href="@{/loginadmin}">Admin Login</a></li>
+                                </ul>
+                            </li>
+                            <li th:if="${utente != null}" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Operazioni Utente
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" th:href="@{/riservatautente/logout}"> Logout </a></li>
+                                    <li><a class="dropdown-item" th:href="@{/riservatautente}">Area Riservata</a></li>
+                                </ul>
+                            </li>
+                            <li th:if="${admin != null}" class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Operazioni Admin
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" th:href="@{/riservataadmin/logout}"> Logout </a></li>
+                                    <li><a class="dropdown-item" th:href="@{/riservataadmin}">Area Riservata Admin</a></li>
+                                </ul>
+                            </li>
+        
+        
+        
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                    Scegli la tua marca di auto preferita
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li ><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Ford')}">Ford</a></li>
+                                    <li><a class="dropdown-item"  th:href="@{/dettagliomarca(marca='Toyota')}">Toyota</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Infiniti')}">Infiniti</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Subaru')}">Subaru</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Lotus')}">Lotus</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Alfa Romeo')}">Alfa Romeo</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Maserati')}">Maserati</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Aston Martin')}">Aston Martin</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='McLaren')}">McLaren</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Lamborghini')}">Lamborghini</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Porsche')}">Porsche</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Ferrari')}">Ferrari</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Jaguar')}">Jaguar</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Tesla')}">Tesla</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Volvo')}">Volvo</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Jeep')}">Jeep</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Volkswagen')}">Volkswagen</a></li></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Chevrolet')}">Chevrolet</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Nissan')}">Nissan</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Kia')}">Kia</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='BMW')}">BMW</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Mercedes-Benz')}">Mercedes-Benz</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Renault')}">Renault</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Audi')}">Audi</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/dettagliomarca(marca='Fiat')}">Fiat</a></li>
+                                </ul>
+                            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                Quanto Vuoi Viaggiare
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li ><a class="dropdown-item" th:href="@{/noleggiolungo}"> Noleggio Lungo termine </a></li>
+                                <li><a class="dropdown-item" th:href="@{/dettagliocorto}"> Noleggio Breve termine </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                                Come ti alimenti?
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li ><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='D')}" > Diesel </a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='B')}" > Benzina </a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='E')}" > Elettrica </a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglioalimentazione(alimentazione='H')}" > Hybrid </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                               Scegli il tuo comfort
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li ><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='2' )}"> Citycar</a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='4')}" > Utilitaria </a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='5')}" > Berlina </a></li>
+                                <li ><a class="dropdown-item" th:href="@{/dettaglionumeroposti(numeroPosti='7')}" > Auto familiare </a></li>
+                            </ul>
+                        </li>
+                        
+        
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+    <article class="container text-center">
+        <div class="row align-item-start">
+            <div class="card col-md-4" style="width: 18rem;" th:each=" a : ${automobili}">
+                <img th:src="@{${a.foto == null ? 'sfondonoleggio.jpeg' : a.foto}}"
+                     style="max-height:150px; max-width: 263px;">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${a.marca} + ' ' +${a.modello}"></h5>
+                    <p class="card-text" th:text="${a.descrizione}"></p>
+                </div>
+                <a th:href="@{/dettaglio(id=${a.id})}" class="btn btn-primary">Piu' Dettagli</a>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <div class="footerdiv">
+            <div>
+                <img th:src="@{imgs/logofb.png}">
+                <p> CarRental </p>
+            </div>
+            <div>
+                <img th:src="@{imgs/logoig.png}">
+                <p> Car__Rental </p>
+            </div>
+            <div>
+                <img th:src="@{imgs/logox.png}">
+                <p> carrental </p>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p class="info-title">Informazioni</p>
+            <ul class="info-list">
+                <li>Condizioni generali</li>
+                <li>Informativa Privacy</li>
+                <li>Domande frequenti</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Policy</li>
+                <li>Aggiorna le preferenze sui cookie</li>
+            </ul>
+        </div>
+        <div class="orari">
+            <p>Via Duomo 4, 20124 MI</p>
+            <p>Lunedi-Venerdì: 8:00-20:00</p>
+            <p>Sabato-Domenica: 8:00-13:00</p>
+        </div>
+        <div class="footer-copyright">
+            <p>Copyright © 2019 Car Rental – Powered by Envision</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

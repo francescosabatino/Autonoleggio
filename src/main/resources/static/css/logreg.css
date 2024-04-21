@@ -1,0 +1,91 @@
+div.DP {
+  margin-right: auto;
+  margin-left: 50vw;
+  margin-top: 20vw;
+  margin-bottom: auto;
+}
+div form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+footer {
+ height: fit-content;
+ display: flex;
+ border: 2px solid black; /* Specificato lo stile e il colore del bordo */
+ color: white;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+}
+.remove-padding{
+  padding: 0%;
+}
+.pippo {
+  background-color: #AEB9A9;
+}
+nav nav div div img {
+  max-height: 50px;
+}
+form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  }
+footer img{
+ max-height: 50px;
+}
+footer {
+   background-color: #AEB9A9;
+   padding: 20px;
+   text-align: center;
+}
+
+.footerdiv {
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: auto;
+   margin-top: 3vw;
+}
+
+.footerdiv > div {
+   flex: 1;
+}
+.footer-info {
+   margin-top: 3vw;
+   margin-left: 10vw;
+   display: inline-block;
+   vertical-align: top;
+   width: 50%;
+   text-align: left;
+}
+
+.info-title {
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.info-list {
+   list-style-type: none;
+   padding: 0;
+}
+
+.footer-copyright {
+   display: flex;
+   font-size: 12px;
+   margin-top: auto;
+}
+div.orari{
+margin-top:2vw;
+}
+div.footerdiv div {
+   margin-left:2vw;
+}
